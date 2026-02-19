@@ -1,0 +1,118 @@
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #e67e22;
+  --bg-light: #f4f4f4;
+  --text-main: #333333;
+  --success-color: #27ae60;
+  --error-color: #e74c3c;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  line-height: 1.6;
+  margin: 20px;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+button {
+  transition: background-color 0.3s ease, transform 0.1s;
+  cursor: pointer;
+  padding: 10px 15px;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+a:hover, button:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+  background-color: #dcdde1;
+}
+
+button:active {
+  transform: scale(0.95);
+  background-color: var(--accent-color);
+}
+
+input:focus, button:focus {
+  outline: 3px solid var(--accent-color);
+}
+
+article {
+  display: inline-block;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  margin: 10px;
+  padding: 15px;
+  vertical-align: top;
+}
+
+article:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+article:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.cart-container:empty {
+  display: block;
+  height: 200px;
+  background: url('empty-cart-bg.png') no-repeat center;
+  border: 2px dashed #bbb;
+}
+
+.price::before {
+  content: "₱";
+  font-weight: bold;
+}
+
+input:required {
+  border: 2px solid var(--error-color);
+}
+
+input:valid {
+  border: 2px solid var(--success-color);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td:first-child, th:first-child {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+li::marker {
+  color: var(--accent-color);
+  font-size: 1.2em;
+}
+
+blockquote::before {
+  content: "“";
+  font-size: 2em;
+  color: var(--accent-color);
+}
+
+blockquote::after {
+  content: "”";
+  font-size: 2em;
+  color: var(--accent-color);
+}
