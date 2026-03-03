@@ -12,107 +12,144 @@ body {
   background-color: var(--bg-light);
   color: var(--text-main);
   line-height: 1.6;
-  margin: 20px;
+  margin: 0;
+  padding: 10px;
 }
 
-h1, h2, h3 {
-  font-family: Georgia, 'Times New Roman', serif;
-  color: var(--primary-color);
-  font-weight: bold;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-a {
-  text-decoration: none;
-  color: var(--accent-color);
-  transition: all 0.3s ease;
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  background-color: white;
 }
 
-button {
-  transition: background-color 0.3s ease, transform 0.1s;
-  cursor: pointer;
-  padding: 10px 15px;
-  border: none;
-  background-color: var(--primary-color);
-  color: white;
+nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  gap: 10px;
 }
 
-a:hover, button:hover {
-  color: var(--primary-color);
-  text-decoration: underline;
-  background-color: #dcdde1;
+.products-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
-button:active {
-  transform: scale(0.95);
-  background-color: var(--accent-color);
+.cart-list {
+  list-style: none;
+  padding: 0;
 }
 
-input:focus, button:focus {
-  outline: 3px solid var(--accent-color);
-}
-
-article {
-  display: inline-block;
-  width: 250px;
+.cart-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: white;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background-color: white;
-  margin: 10px;
   padding: 15px;
-  vertical-align: top;
+  margin-bottom: 10px;
+  gap: 15px;
 }
 
-article:nth-child(odd) {
-  background-color: #ffffff;
+.cart-item img {
+  width: 80px;
 }
 
-article:nth-child(even) {
-  background-color: #f9f9f9;
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 40vh;
+  padding: 20px;
+  background: #ecf0f1;
+  animation: slideUp 0.8s ease-out;
 }
 
-.cart-container:empty {
-  display: block;
-  height: 200px;
-  background: url('empty-cart-bg.png') no-repeat center;
-  border: 2px dashed #bbb;
+.table-container {
+  overflow-x: auto;
 }
 
-.price::before {
-  content: "₱";
-  font-weight: bold;
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-input:required {
-  border: 2px solid var(--error-color);
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
-input:valid {
-  border: 2px solid var(--success-color);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-td:first-child, th:first-child {
-  font-weight: bold;
+button:hover {
+  animation: pulse 0.6s infinite;
+  background-color: #dcdde1;
   color: var(--primary-color);
 }
 
-li::marker {
-  color: var(--accent-color);
-  font-size: 1.2em;
+@media (min-width: 481px) {
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px; 
+  }
+
+  nav ul {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .cart-item {
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
 }
 
-blockquote::before {
-  content: "“";
-  font-size: 2em;
-  color: var(--accent-color);
+@media (min-width: 769px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 5%;
+  }
+
+  nav ul {
+    gap: 30px;
+  }
+
+  .shop-layout {
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    gap: 30px;
+    align-items: start;
+  }
+
+  .products-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .checkout-container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  .checkout-main { flex: 2; }
+  .checkout-sidebar { flex: 1; }
 }
 
-blockquote::after {
-  content: "”";
-  font-size: 2em;
-  color: var(--accent-color);
-}
+h1, h2, h3 { font-family: Georgia, serif; color: var(--primary-color); }
+a { text-decoration: none; color: var(--accent-color); }
+button { padding: 10px 15px; border: none; background-color: var(--primary-color); color: white; cursor: pointer; }
+input:focus { outline: 3px solid var(--accent-color); }

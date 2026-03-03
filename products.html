@@ -7,43 +7,51 @@
   <title>E-Commerce</title>
 </head>
 <body>
-  <main>
-    <aside>
-      <h1>Filters</h1>
-      <form>
+  <header>
+    <h1>Gians Clothing</h1>
+    <nav>
+        <ul>
+            <li><a href="landing.html">Home</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="account.html">Account</a></li>
+        </ul>
+    </nav>
+    </header>
+ <main class="shop-layout">
+  <aside>
+    <h1>Filters</h1>
+    <form>
       <section>
-          <h2>Category</h2>
-          <label><input type="checkbox" value="tshirts"> T-shirts</label>
-          <label><input type="checkbox" alue="pants"> Pants</label>
-        </section>
+        <h2>Category</h2>
+        <label><input type="checkbox" value="tshirts"> T-shirts</label>
+        <label><input type="checkbox" value="pants"> Pants</label>
+      </section>
+      <section>
+        <h3>Price Range</h3>
+        <label><input type="radio" name="price" value="under-300"> Under ₱300</label>
+        <label><input type="radio" name="price" value="300-1000"> ₱300 - ₱1000</label>
+      </section>
+      <button type="submit">Apply Filters</button>
+    </form>
+  </aside>
 
- <section>
-          <h3>Price Range</h3>
-          <label><input type="radio" name="price" value="under-300"> Under ₱300</label>
-          <label><input type="radio" name="price" value="300-1000"> ₱300 - ₱1000</label>
-        </section>
-        
-        <button type="submit">Apply Filters</button>
-      </form>
-    </aside>
-
-<section>
-      <article>
-        <img src="tshirt.jpg" alt="Classic White T-shirt">
-          <h3>T-Shirt</h3>
-          <p><b>₱200</b></p>
-          <a href="datails.html">View Details</a>
-      </article>
-      <article>
-        <img src="pants.jpg" alt="Denim Pants">
-        <div>
-          <h3>Pants</h3>
-          <p><b>₱500</b></p>
-          <a href="datails.html">View Details</a>
-        </div>
-      </article>
-      
-    </section>
-  </main>
+  <section class="products-container">
+    <article>
+      <img src="tshirt.jpg" alt="Classic White T-shirt">
+      <h3>T-Shirt</h3>
+      <p><b>₱200</b></p>
+      <a href="datails.html">View Details</a>
+    </article>
+    <article>
+      <img src="pants.jpg" alt="Denim Pants">
+      <div>
+        <h3>Pants</h3>
+        <p><b>₱500</b></p>
+        <a href="datails.html">View Details</a>
+      </div>
+    </article>
+  </section>
+</main>
 </body>
 </html>
